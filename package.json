@@ -28,16 +28,16 @@
   },
   "homepage": "https://github.com/tatsuyafujisaki/x-api-functions#readme",
   "dependencies": {
-    "@xdevplatform/xdk": "^0.4.0",
-    "dotenv": "^17.2.3",
-    "firebase-admin": "^13.6.1",
-    "firebase-functions": "^7.0.5"
+    "@xdevplatform/xdk": "latest",
+    "dotenv": "latest",
+    "firebase-admin": "latest",
+    "firebase-functions": "latest"
   },
   "devDependencies": {
-    "@types/dotenv": "^6.1.1",
-    "@types/node": "^25.2.0",
-    "firebase-tools": "^15.5.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "@types/dotenv": "latest",
+    "@types/node": "latest",
+    "firebase-tools": "latest",
+    "ts-node": "latest",
+    "typescript": "latest"
   }
 }
