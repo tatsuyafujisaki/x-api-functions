@@ -27,6 +27,7 @@ export const getTrends = onRequest(async (request, response) => {
 
     // Set CORS if needed, or just return JSON
     response.set('Access-Control-Allow-Origin', '*');
+    console.log(JSON.stringify(trendsResponse, null, 2));
     response.json(trendsResponse);
   } catch (error) {
     logger.error("Error fetching trends", { error: error instanceof Error ? error.message : error });
