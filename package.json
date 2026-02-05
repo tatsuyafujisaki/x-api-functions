@@ -1,0 +1,43 @@
+{
+  "name": "x-api-functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tatsuyafujisaki/x-api-functions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/tatsuyafujisaki/x-api-functions/issues"
+  },
+  "homepage": "https://github.com/tatsuyafujisaki/x-api-functions#readme",
+  "dependencies": {
+    "@xdevplatform/xdk": "^0.4.0",
+    "dotenv": "^17.2.3",
+    "firebase-admin": "^13.6.1",
+    "firebase-functions": "^7.0.5"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/node": "^25.2.0",
+    "firebase-tools": "^15.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
