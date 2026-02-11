@@ -1,7 +1,11 @@
 import {onRequest} from 'firebase-functions/v2/https';
+import {setGlobalOptions} from 'firebase-functions/v2';
 import * as logger from 'firebase-functions/logger';
 import {readTrends} from './trends';
 import {saveTrends} from './database';
+
+// Set the default region for all functions to Tokyo (asia-northeast1)
+setGlobalOptions({region: 'asia-northeast1'});
 
 // Load environment variables for local development (Firebase emulators)
 if (process.env.FUNCTIONS_EMULATOR === 'true') {
@@ -12,7 +16,7 @@ if (process.env.FUNCTIONS_EMULATOR === 'true') {
  * Cloud Function to fetch X (Twitter) trends.
  *
  * Usage:
- * https://<region>-<project-id>.cloudfunctions.net/getTrends?woeid=1
+ * https://asia-northeast1-<project-id>.cloudfunctions.net/getTrends?woeid=1
  */
 export const getTrends = onRequest(async (request, response) => {
   const woeidParam = request.query.woeid as string;
