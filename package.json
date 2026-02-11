@@ -1,7 +1,6 @@
 {
   "name": "x-api-functions",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
@@ -15,18 +14,6 @@
   "engines": {
     "node": "24"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tatsuyafujisaki/x-api-functions.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/tatsuyafujisaki/x-api-functions/issues"
-  },
-  "homepage": "https://github.com/tatsuyafujisaki/x-api-functions#readme",
   "dependencies": {
     "@xdevplatform/xdk": "latest",
     "dotenv": "latest",

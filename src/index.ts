@@ -1,6 +1,7 @@
 import { onRequest } from "firebase-functions/v2/https";
 import * as logger from "firebase-functions/logger";
 import { readTrends } from "./trends";
+import { saveTrends } from "./database";
 import * as dotenv from 'dotenv';
 
 // Load environment variables for local development (Firebase emulators)
@@ -25,6 +26,15 @@ export const getTrends = onRequest(async (request, response) => {
     logger.info(`Fetching trends for WOEID: ${woeid}`, { structuredData: true });
     const trendsResponse = await readTrends(woeid);
 
+    // Save to Firestore
+    try {
+      const docId = await saveTrends(woeid, trendsResponse);
+      logger.info(`Successfully saved trends to Firestore with doc ID: ${docId}`);
+    } catch (dbError) {
+      // We log the error but don't fail the entire request if DB save fails
+      logger.error("Failed to save to Firestore", { error: dbError });
+    }
+
     // Set CORS if needed, or just return JSON
     response.set('Access-Control-Allow-Origin', '*');
     console.log(JSON.stringify(trendsResponse, null, 2));
@@ -34,3 +44,4 @@ export const getTrends = onRequest(async (request, response) => {
     response.status(500).send("Failed to fetch trends. Ensure BEARER_TOKEN is configured.");
   }
 });
+
