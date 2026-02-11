@@ -1,15 +1,11 @@
-import { Client } from '@xdevplatform/xdk';
-import * as dotenv from 'dotenv';
-
-// Load environment variables from .env file
-dotenv.config();
+import {Client} from '@xdevplatform/xdk';
 
 /**
  * Reads trends from X API v2 using the official XDK.
  *
  * @param woeid - The Where On Earth ID for the location (1 for Worldwide)
  */
-export async function readTrends(woeid: number = 1) {
+export async function readTrends(woeid = 1): Promise<unknown> {
   const bearerToken = process.env.BEARER_TOKEN;
 
   if (!bearerToken) {
@@ -17,19 +13,22 @@ export async function readTrends(woeid: number = 1) {
   }
 
   // Initialize the X API Client
-  const client = new Client({ bearerToken });
+  const client = new Client({bearerToken});
 
   try {
     console.log(`\n--- Fetching Trends for WOEID: ${woeid} ---`);
 
     // Fetch trends using the SDK
     const response = await client.trends.getByWoeid(woeid, {
-      maxTrends: 10 // Optional: limit the number of trends
+      maxTrends: 10, // Optional: limit the number of trends
     });
 
     return response;
   } catch (error) {
-    console.error('Failed to fetch trends:', error instanceof Error ? error.message : error);
+    console.error(
+      'Failed to fetch trends:',
+      error instanceof Error ? error.message : error,
+    );
     throw error;
   }
 }

@@ -9,21 +9,29 @@
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
   },
   "engines": {
     "node": "24"
   },
   "dependencies": {
     "@xdevplatform/xdk": "latest",
-    "dotenv": "latest",
     "firebase-admin": "latest",
     "firebase-functions": "latest"
   },
   "devDependencies": {
     "@types/dotenv": "latest",
     "@types/node": "latest",
+    "dotenv": "latest",
     "firebase-tools": "latest",
+    "gts": "latest",
     "ts-node": "latest",
     "typescript": "latest"
   }
