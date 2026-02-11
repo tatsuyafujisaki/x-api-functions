@@ -1,6 +1,4 @@
 {
-  "name": "x-api-functions",
-  "version": "0.1.0",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
@@ -8,8 +6,6 @@
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "gts lint",
     "clean": "gts clean",
     "compile": "tsc",
@@ -34,5 +30,6 @@
     "gts": "latest",
     "ts-node": "latest",
     "typescript": "latest"
-  }
+  },
+  "private": true
 }
