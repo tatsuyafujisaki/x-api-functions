@@ -1,7 +1,7 @@
 {
   "main": "dist/index.js",
   "engines": {
-    "node": "24"
+    "node": "25"
   },
   "dependencies": {
     "@xdevplatform/xdk": "latest",
@@ -22,7 +22,6 @@
     "clean": "gts clean",
     "compile": "tsc",
     "fix": "gts fix",
-
     "pretest": "npm.cmd run compile || npm run compile",
     "posttest": "npm.cmd run lint || npm run lint",
     "build": "tsc",
