@@ -1,7 +1,7 @@
 {
   "main": "dist/index.js",
   "engines": {
-    "node": "25"
+    "node": "*"
   },
   "dependencies": {
     "@xdevplatform/xdk": "latest",
