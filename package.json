@@ -13,17 +13,11 @@
     "@types/node": "latest",
     "dotenv": "latest",
     "firebase-tools": "latest",
-    "gts": "latest",
     "ts-node": "latest",
     "typescript": "latest"
   },
   "scripts": {
-    "lint": "gts lint",
-    "clean": "gts clean",
     "compile": "tsc",
-    "fix": "gts fix",
-    "pretest": "npm.cmd run compile || npm run compile",
-    "posttest": "npm.cmd run lint || npm run lint",
     "build": "tsc",
     "build:watch": "tsc --watch",
     "serve": "npm run build && firebase emulators:start --only functions",
