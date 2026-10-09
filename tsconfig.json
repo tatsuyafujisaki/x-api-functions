@@ -1,19 +1,24 @@
 {
+  "$schema": "https://www.schemastore.org/tsconfig",
   "compilerOptions": {
+    "module": "nodenext",
+    "types": [
+      "node"
+    ],
+    "rootDir": "src",
+    "outDir": "dist",
+    "sourceMap": true,
+    "erasableSyntaxOnly": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
-    "forceConsistentCasingInFileNames": true,
-    "lib": ["ES2023"],
-    "module": "commonjs",
-    "noEmitOnError": true,
+    "exactOptionalPropertyTypes": true,
     "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
     "noImplicitReturns": true,
-    "outDir": "build",
-    "pretty": true,
-    "rootDir": "src",
-    "sourceMap": true,
-    "strict": true,
-    "target": "ESNext"
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
   "include": [
     "src/**/*.ts"

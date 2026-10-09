@@ -8,7 +8,7 @@ import {saveTrends} from './database';
 setGlobalOptions({region: 'asia-northeast1'});
 
 // Load environment variables for local development (Firebase emulators)
-if (process.env.FUNCTIONS_EMULATOR === 'true') {
+if (process.env['FUNCTIONS_EMULATOR'] === 'true') {
   require('dotenv').config();
 }
 
@@ -19,7 +19,7 @@ if (process.env.FUNCTIONS_EMULATOR === 'true') {
  * https://asia-northeast1-<project-id>.cloudfunctions.net/getTrends?woeid=1
  */
 export const getTrends = onRequest(async (request, response) => {
-  const woeidParam = request.query.woeid as string;
+  const woeidParam = request.query['woeid'] as string;
   const woeid = woeidParam ? parseInt(woeidParam, 10) : 1;
 
   if (isNaN(woeid)) {

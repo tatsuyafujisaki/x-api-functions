@@ -6,7 +6,7 @@ import {Client} from '@xdevplatform/xdk';
  * @param woeid - The Where On Earth ID for the location (1 for Worldwide)
  */
 export async function readTrends(woeid = 1): Promise<unknown> {
-  const bearerToken = process.env.BEARER_TOKEN;
+  const bearerToken = process.env['BEARER_TOKEN'];
 
   if (!bearerToken) {
     throw new Error('BEARER_TOKEN is not set in environment variables.');
